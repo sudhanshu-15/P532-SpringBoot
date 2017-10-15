@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
+    <link href="http://cdn.jsdelivr.net/webjars/bootstrap/3.3.4/css/bootstrap.min.css"
+          th:href="@{/webjars/bootstrap/3.3.4/css/bootstrap.min.css}"
+          rel="stylesheet" media="screen" />
+    <title>GameBuilderScores</title>
+</head>
+<body>
+    <h1>Score</h1>
+    <table class="table table-striped">
+        <tr>
+            <th>PlayerId</th>
+            <th>PlayerName</th>
+            <th>GameId</th>
+            <th>GameName</th>
+        </tr>
+        <tr th:each="score : ${scoreslist}">
+            <td th:text="${score.playerid}"></td>
+            <td th:text="${score.playername}"></td>
+            <td th:text="${score.gameid}"></td>
+            <td th:text="${score.gamename}"></td>
+        </tr>
+    </table>
+</body>
+</html>
