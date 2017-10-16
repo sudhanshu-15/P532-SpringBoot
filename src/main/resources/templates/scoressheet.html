@@ -32,13 +32,15 @@
                 <th>GameName</th>
                 <th>Score</th>
             </tr>
-            <tr th:each="scores : ${scoreslist}">
-                <td th:text="${scores.playerid}"></td>
-                <td th:text="${scores.playername}"></td>
-                <td th:text="${scores.gameid}"></td>
-                <td th:text="${scores.gamename}"></td>
-                <td th:text="${scores.score}"></td>
-            </tr>
+            <th:block th:each="scores : ${scoreslist}">
+                <tr>
+                    <td th:text="${scores.playerid}"></td>
+                    <td th:text="${scores.playername}"></td>
+                    <td th:text="${scores.gameid}"></td>
+                    <td th:text="${scores.gamename}"></td>
+                    <td th:text="${scores.score}"></td>
+                </tr>
+            </th:block>
         </table>
     </div>
 </body>

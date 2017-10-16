@@ -2,15 +2,19 @@ package com.gamemaker.gamebuilderwebapp.com.gamemaker.model;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.IdClass;
 import javax.persistence.Table;
+import java.io.Serializable;
 
 @Entity
 @Table(name = "ScoreSheet")
-public class ScoreSheet {
+@IdClass(MyKey.class)
+public class ScoreSheet{
 
     @Id
     private Integer playerid;
     private String playername;
+    @Id
     private Integer gameid;
     private String gamename;
     private Integer score;
