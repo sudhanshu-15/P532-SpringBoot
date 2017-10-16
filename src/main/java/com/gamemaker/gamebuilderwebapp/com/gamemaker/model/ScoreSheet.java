@@ -5,14 +5,15 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "score")
-public class Score {
+@Table(name = "ScoreSheet")
+public class ScoreSheet {
 
     @Id
     private Integer playerid;
     private String playername;
     private Integer gameid;
     private String gamename;
+    private Integer score;
 
     public Integer getPlayerid() {
         return playerid;
@@ -44,5 +45,13 @@ public class Score {
 
     public void setGamename(String gamename) {
         this.gamename = gamename;
+    }
+
+    public Integer getScore() {
+        return score;
+    }
+
+    public void setScore(Integer score) {
+        this.score = score;
     }
 }

@@ -30,12 +30,14 @@
                 <th>PlayerName</th>
                 <th>GameId</th>
                 <th>GameName</th>
+                <th>Score</th>
             </tr>
-            <tr th:each="score : ${scoreslist}">
-                <td th:text="${score.playerid}"></td>
-                <td th:text="${score.playername}"></td>
-                <td th:text="${score.gameid}"></td>
-                <td th:text="${score.gamename}"></td>
+            <tr th:each="scores : ${scoreslist}">
+                <td th:text="${scores.playerid}"></td>
+                <td th:text="${scores.playername}"></td>
+                <td th:text="${scores.gameid}"></td>
+                <td th:text="${scores.gamename}"></td>
+                <td th:text="${scores.score}"></td>
             </tr>
         </table>
     </div>

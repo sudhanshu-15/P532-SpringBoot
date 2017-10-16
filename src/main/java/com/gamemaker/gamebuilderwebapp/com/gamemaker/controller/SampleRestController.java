@@ -1,15 +1,13 @@
 package com.gamemaker.gamebuilderwebapp.com.gamemaker.controller;
 
 import com.gamemaker.gamebuilderwebapp.com.gamemaker.model.Player;
-import com.gamemaker.gamebuilderwebapp.com.gamemaker.model.Score;
+import com.gamemaker.gamebuilderwebapp.com.gamemaker.model.ScoreSheet;
 import com.gamemaker.gamebuilderwebapp.com.gamemaker.repository.GamesRepository;
 import com.gamemaker.gamebuilderwebapp.com.gamemaker.repository.PlayersRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
@@ -30,7 +28,7 @@ public class SampleRestController {
 
     @GetMapping("/games")
     public String getAll(Model model) {
-        List<Score> scores = gamesRepository.findAll();
+        List<ScoreSheet> scores = gamesRepository.findAll();
         model.addAttribute("scoreslist", scores);
         return "scoressheet";
     }
